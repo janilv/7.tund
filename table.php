@@ -2,7 +2,7 @@
 	
 	// table.php
 	require_once("functions.php");
-	require_once("editfunctions.php");
+	require_once("editfunction.php");
 	
 	
 	//kasutaja tahab midagi muuta

@@ -14,7 +14,7 @@
 		
 		// ei ole aadressieal ?edit=midagi
 		// suunan table.php lehele
-		//header("location: table.php");
+		header("location: table.php");
 		
 	}else{
 		// saada kätte kõige uuemad andmed selle id kohta
