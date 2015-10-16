@@ -2,6 +2,15 @@
 	
 	// table.php
 	require_once("functions.php");
+	require_once("editfunctions.php");
+	
+	
+	//kasutaja tahab midagi muuta
+	if(isset($_POST["update"])){
+	
+		updateCar($_POST["id"], $_POST["number_plate"], $_POST["color"]);
+	
+	}
 	
 	//kas kasutaja tahab kustutada
 	// kas aadressireal on ?delete=??!??!?!
@@ -40,7 +49,7 @@
 				echo "<form>";
 				echo "<td>".$car_list[$i]->id."</td>";
 				echo "<td>".$car_list[$i]->user_id."</td>";
-				echo "<td><input name='number plate' value='".$car_list[$i]->number_plate."'></td>";
+				echo "<td><input type='hidden' name='id' value='".$car_list[$i]->id."'<input name='number plate' value='".$car_list[$i]->number_plate."'></td>";
 				echo "<td><input name='color' value='".$car_list[$i]->color."'></td>";
 				echo "<td><input type='submit' name='update'></td>";
 				echo "<td><a href='table.php'>cancel<a/></td>";
@@ -58,6 +67,7 @@
 				echo "<td>".$car_list[$i]->color."</td>";
 				echo "<td><a href='?delete=".$car_list[$i]->id."'>X</a></td>";
 				echo "<td><a href='?edit=".$car_list[$i]->id."'>Edit</a></td>";
+				echo "<td><a href='edit.php?edit=".$car_list[$i]->id."'>Edit.php</a></td>";
 				
 				echo "</tr>";
 			}
